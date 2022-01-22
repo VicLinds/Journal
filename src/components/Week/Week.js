@@ -10,12 +10,7 @@ import Saturday from "./Saturday"
 import "./Week.css"
 
 const Week = () => {
-    const [friday, setFriday] = useState("");
-    const [saturday, setSaturday] = useState(""); 
-
-    const [fridayContent, setFridayContent] = useState([]);
-    const [saturdayContent, setSaturdayContent] = useState([]);
-  
+ 
   return <div className="container">
       <div className="page">
           <header>January</header>

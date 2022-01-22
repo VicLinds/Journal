@@ -9,4 +9,48 @@ header {
 article {
     font-size: smaller;
 }
+.link-container {
+    position: absolute;
+    margin-top: 15px;
+    margin-left: 15px;
+}
 
+.link-item {
+    text-decoration: none;
+    color:rgb(75, 55, 39);
+}
+
+.error {
+    padding: 100px;
+    background-image: linear-gradient(180deg, rgb(243, 234, 217), rgb(214, 199, 169));
+    width: 400px;
+    text-align: center;
+}
+
+.container {
+    display:flex;
+    color: rgb(97, 59, 29);
+}
+
+.page {
+    min-width: 380px;
+    height: 550px;
+    border: 1px solid black;
+    border-radius: 9px;
+    padding: 40px;
+    margin: 0;
+    /* background-color: rgb(243, 234, 217); */
+    background-image: linear-gradient(180deg, rgb(243, 234, 217), rgb(214, 199, 169));
+}
+
+header {
+    margin-inline: auto;
+    text-align: center;
+    width: 250px;
+    margin-bottom: 20px;
+    /* border-bottom: 1px dashed rgb(97, 59, 29); */
+    text-decoration: underline;
+    font-family: Tangerine;
+    /* text-shadow: 1px 1px 3px rgb(90, 77, 67); */
+    font-size: 50px;
+}
