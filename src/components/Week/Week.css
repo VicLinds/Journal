@@ -83,33 +83,33 @@ header {
     width: 150px;
 }
 
-.Sunday {
+.sunday {
     position: absolute;
     margin-top: 70px;
 }
 
 
-.Monday {
+.monday {
     position: absolute;
     margin-left: 200px;
 }
 
-.Wednesday {
+.wednesday {
     position: absolute;
 }
 
-.Thursday {
+.thursday {
     position: absolute;
     margin-left: 200px;
     margin-top: 70px;
 }
 
-.Tuesday, .Friday {
+.tuesday, .friday {
     position: absolute;
     margin-top: 340px;
 }
 
-.Saturday {
+.saturday {
     position: absolute;
     margin-left: 200px;
     margin-top: 340px;

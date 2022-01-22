@@ -1,98 +1,38 @@
-import React, {useState, useEffect} from 'react';
+import {useState} from "react";
+import Sunday from "./Sunday"
+import Monday from "./Monday"
+import Tuesday from "./Tuesday"
+import Wednesday from "./Wednesday"
+import Thursday from "./Thursday"
+import Friday from "./Friday"
+import Saturday from "./Saturday"
+
 import "./Week.css"
 
 const Week = () => {
-    const getLocalStorage = () => {
-      let sundayContent = localStorage.getItem('sundayContent');
-      if (sundayContent) {
-        return (sundayContent = JSON.parse(localStorage.getItem('sundayContent')));
-      } else {
-        return [];
-      }
-    };
-    
-    const [sunday, setSunday] = useState("");
-    const [monday, setMonday] = useState("");
-    const [tuesday, setTuesday] = useState("");
-    const [wednesday, setWednesday] = useState("");
-    const [thursday, setThursday] = useState("");
     const [friday, setFriday] = useState("");
     const [saturday, setSaturday] = useState(""); 
 
-    const [sundayContent, setSundayContent] = useState(getLocalStorage());
-    const [mondayContent, setMondayContent] = useState([]);
-    const [tuesdayContent, setTuesdayContent] = useState([]);
-    const [wednesdayContent, setWednesdayContent] = useState([]);
-    const [thursdayContent, setThursdayContent] = useState([]);
     const [fridayContent, setFridayContent] = useState([]);
-    const [saturdayContent, setSaturdayContent] = useState([]); 
-
-  useEffect(() => {
-    localStorage.setItem('sundayContent', JSON.stringify(sundayContent));
-  }, [sundayContent]);
-  
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        if (sunday) {
-            const newItem = {id: new Date().getTime().toString(), info: sunday}
-            return (
-                setSundayContent([...sundayContent, newItem]),
-                setSunday("")
-            )
-        }
-
-    }
-
-    const removeItem = (id, weekday) => {
-        if (weekday==="sunday") {
-            return (
-                setSundayContent(sundayContent.filter((item) => item.id !== id))
-            )
-        }
-    }
+    const [saturdayContent, setSaturdayContent] = useState([]);
   
   return <div className="container">
-      <div className="page first">
+      <div className="page">
           <header>January</header>
           <div className="week">
-              <section className="Sunday weekdays vertical">
-                  <div className="number">23</div>
-                  <h4>Sunday</h4>
-                  <form onSubmit={handleSubmit}>
-                        <input type="text" value={sunday} onChange={(e)=>setSunday(e.target.value)}/>
-                        <button type="submit">+</button>
-                  </form>
-                  <div className="list">
-                      {sundayContent.map((item)=>{
-                          return (
-                                <div className="listItem" key={item.id}>{item.info}<button onClick={() => removeItem(item.id, "sunday")}>x</button></div>
-                          )
-                      })}
-                  </div>
-              </section>
-              <section className="Monday weekdays vertical">
-                  <h4>Monday</h4>
-                  <div className="number">24</div>
-                  <input type="text" />
-              </section>
-              <section className="Tuesday weekdays horizontal">
-                  <h4>Tuesday</h4>
-                  <div className="number">25</div>
-              </section>
+            < Sunday />
+            < Monday />
+            < Tuesday />
           </div>
           <footer></footer>
       </div>
-      <div className="page second">
+      <div className="page">
           <header>From 23 until 29 </header>
           <div className="week">
-          <section className="Wednesday weekdays vertical"><h4>Wednesday</h4><div className="number">26</div></section>
-              <section className="Thursday weekdays vertical"><div className="number">27</div><h4>Thursday</h4></section>
-              <section className="Friday weekdays mini"><div className="flex">
-                  <h4>Friday</h4><div className="number">28</div>
-              </div></section>
-              <section className="Saturday weekdays mini"><div className="flex">
-              <div className="number">29</div><h4>Saturday</h4>
-              </div></section>
+          < Wednesday />
+        < Thursday />
+        < Friday />
+         < Saturday />
   </div>
  
           </div>
