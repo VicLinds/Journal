@@ -36,20 +36,22 @@ const Tuesday = () => {
             }
         }
   return  (
-    <section className="tuesday weekdays horizontal">
-        <div className="number">25</div>
-            <h4>Tuesday</h4>
-            <form onSubmit={handleSubmit}>
-                    <input type="text" value={tuesday} onChange={(e)=>setTuesday(e.target.value)}/>
-                    <button type="submit">+</button>
-            </form>
-            <div className="list">
+    <section className="tuesday weekdays horizontal flex">
+            <div className="day-header">
+                <div className="number">25</div>
+                    <h4>Tuesday</h4>
+                    <form onSubmit={handleSubmit}>
+                            <input type="text" value={tuesday} onChange={(e)=>setTuesday(e.target.value)}/>
+                            <button type="submit">+</button>
+                    </form>
+            </div>
+        <div className="horizontal-list">
                 {tuesdayContent.map((item)=>{
                     return (
                             <div className="listItem" key={item.id}>{item.info}<button onClick={() => removeItem(item.id, "tuesday")}>x</button></div>
                     )
                 })}
-        </div>
+         </div>
     </section>)
 };
 

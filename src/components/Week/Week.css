@@ -2,7 +2,7 @@
     font-family: Tangerine;
     src: url(../../font/Tangerine-Bold.ttf);
   }
-  
+
 h4 {
     margin-block: 0;
 }
@@ -15,14 +15,24 @@ button {
     background-color: white;
     border-radius: 50%;
     color:rgb(124, 95, 72);
-
 }
 
 .list {
 margin: 0;
 margin-left: 10px;
 padding-block: 0;
-min-width: 130px;
+min-width: 100px;
+text-transform: capitalize;
+}
+
+.day-header {
+    width: 160px;
+}
+
+.horizontal-list {
+margin-top: 15px;
+padding-block: 0;
+width: 170px;
 text-transform: capitalize;
 }
 
@@ -32,7 +42,7 @@ text-transform: capitalize;
     justify-content: space-between;
 }
 
-  .container {
+.container {
     display:flex;
     color: rgb(97, 59, 29);
 }
@@ -75,11 +85,11 @@ header {
 
 .horizontal {
     height: 120px;
-    width: 300px;
+    width: 350px;
 }
 
 .mini {
-    height: 120px;
+    height: 140px;
     width: 150px;
 }
 
@@ -87,7 +97,6 @@ header {
     position: absolute;
     margin-top: 70px;
 }
-
 
 .monday {
     position: absolute;
@@ -124,4 +133,3 @@ header {
     text-align: center;
     line-height: 30px;
 }
-
