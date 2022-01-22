@@ -1,10 +1,38 @@
 @font-face {
     font-family: Tangerine;
-    src: url(Tangerine-Bold.ttf);
+    src: url(../../font/Tangerine-Bold.ttf);
   }
   
+h4 {
+    margin-block: 0;
+}
 
-.container {
+input {
+    margin-top: 10px;
+}
+button {
+    border: none;
+    background-color: white;
+    border-radius: 50%;
+    color:rgb(124, 95, 72);
+
+}
+
+.list {
+margin: 0;
+margin-left: 10px;
+padding-block: 0;
+min-width: 130px;
+text-transform: capitalize;
+}
+
+.listItem {
+    display: flex;
+    font-size: smaller;
+    justify-content: space-between;
+}
+
+  .container {
     display:flex;
     color: rgb(97, 59, 29);
 }
@@ -41,7 +69,7 @@ header {
 }
 
 .vertical{
-    height: 200px;
+    height: 230px;
     width: 150px;
 }
 
@@ -96,3 +124,4 @@ header {
     text-align: center;
     line-height: 30px;
 }
+
