@@ -1,24 +1,16 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import "./Week.css"
 
 const Week = () => {
-      //grocery bud
-      
-  // const getLocalStorage = () => {
-  //   let list = localStorage.getItem('list');
-  //   if (list) {
-  //     return (list = JSON.parse(localStorage.getItem('list')));
-  //   } else {
-  //     return [];
-  //   }
-  // };
-
-  // const [list, setList] = useState(getLocalStorage());
-
-  // useEffect(() => {
-  //   localStorage.setItem('list', JSON.stringify(list));
-  // }, [list]);
-  
+    const getLocalStorage = () => {
+      let sundayContent = localStorage.getItem('sundayContent');
+      if (sundayContent) {
+        return (sundayContent = JSON.parse(localStorage.getItem('sundayContent')));
+      } else {
+        return [];
+      }
+    };
+    
     const [sunday, setSunday] = useState("");
     const [monday, setMonday] = useState("");
     const [tuesday, setTuesday] = useState("");
@@ -26,14 +18,18 @@ const Week = () => {
     const [thursday, setThursday] = useState("");
     const [friday, setFriday] = useState("");
     const [saturday, setSaturday] = useState(""); 
- 
-    const [sundayContent, setSundayContent] = useState([]);
+
+    const [sundayContent, setSundayContent] = useState(getLocalStorage());
     const [mondayContent, setMondayContent] = useState([]);
     const [tuesdayContent, setTuesdayContent] = useState([]);
     const [wednesdayContent, setWednesdayContent] = useState([]);
     const [thursdayContent, setThursdayContent] = useState([]);
     const [fridayContent, setFridayContent] = useState([]);
     const [saturdayContent, setSaturdayContent] = useState([]); 
+
+  useEffect(() => {
+    localStorage.setItem('sundayContent', JSON.stringify(sundayContent));
+  }, [sundayContent]);
   
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -53,7 +49,6 @@ const Week = () => {
                 setSundayContent(sundayContent.filter((item) => item.id !== id))
             )
         }
-
     }
   
   return <div className="container">
