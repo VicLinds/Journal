@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import "./Month.css"
 
 const Month = () => {
   const [singleTask, setSingleTask] = useState("");
@@ -22,14 +23,13 @@ const Month = () => {
             <header>January</header>
         </div>
         <div className="page">
-        <header>Tracker</header>
+            <header>Tracker</header>
             
             <form onSubmit={handleSubmit}>
                 <label>Enter Task:</label>
                 <input type="text" value={singleTask} onChange={(e)=>setSingleTask(e.target.value)}></input>
                 <button type="submit">+</button>
             </form>
-            
             <div>
                 {tasks.map((item)=>{
                     return (<div key={item.id}>{item.title}
